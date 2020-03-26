@@ -1,0 +1,25 @@
+body{
+    background: lightskyblue;
+}
+button{
+    margin: 2rem 0;
+    background: white;
+}
+.hoverDiv{
+    height:100px;
+    width:100px;
+    background:blue;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+}
+
+p{
+    font-size: large;
+    font-weight: bold;
+    font-family: cursive;
+}
+ul{
+    border: solid black 0.4rem;
+    font-size: large;
+}

@@ -14,7 +14,7 @@ function instructionOne(){
     let goodMorning = document.createTextNode('Good Morning!');
     
     goodMorningBtn.appendChild(goodMorning);
-    document.body.prepend(goodMorningBtn);
+    document.getElementById('instructionOne').before(goodMorningBtn);
 
     goodMorningBtn.addEventListener('click', function () {
         alert('Good morning all you amazing programmers!');
@@ -32,8 +32,7 @@ function instructionTwo(){
 
 //Creates aDiv and changes the background when the mouse moves inside the div or outside the div.
 function instructionThree(){
-    let aDiv = document.querySelector('div');
-    aDiv.id = 'instructionThreeDiv';
+    let aDiv = document.querySelector('.hoverDiv');
     aDiv.addEventListener('mouseover', function () {
         aDiv.style.background = 'purple';
     });
@@ -42,16 +41,14 @@ function instructionThree(){
     });
 }
 
-//Creates a paragraph, which can be clicked and to give it a random color
+//Creates a paragraph, which can be clicked to give it a random color
 function instructionFour(){
     let myParagraph = document.createElement('p');
-    myParagraph.id = 'instructionFourParagraph';
-    let myParagraphText = document.createTextNode('Click me to change my text color!');
+    let myParagraphText = document.createTextNode('This paragraphs text changes to a random color when it is clicked!');
     myParagraph.appendChild(myParagraphText);
-    document.getElementById('instructionThreeDiv').after(myParagraph);
+    document.querySelector('#instructionFour').after(myParagraph);
 
     myParagraph.addEventListener('click', function () {
-        //myParagraph.style.color = 'red'; for the intial part of the instruction.
         let r = Math.floor(Math.random() * 256);
         let g = Math.floor(Math.random() * 256);
         let b = Math.floor(Math.random() * 256);
@@ -62,12 +59,12 @@ function instructionFour(){
 //Creates a button and outputs a name
 function instructionFive(){
     let btn = document.createElement('button');
-    let btnText = document.createTextNode('My Name');
+    let btnText = document.createTextNode('Show My Name');
     btn.appendChild(btnText);
     let aDiv = document.createElement('div');
     aDiv.style.background = 'goldenrod';
     aDiv.style.textAlign = 'center';
-    document.getElementById('instructionFourParagraph').after(btn);
+    document.getElementById('instructionFive').after(btn);
     btn.after(aDiv);
     btn.addEventListener('click', function () {
         let myName = document.createTextNode('Jonathan');
